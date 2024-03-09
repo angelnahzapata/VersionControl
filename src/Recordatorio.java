@@ -74,6 +74,7 @@ public class Recordatorio {
 		JButton Eliminar = new JButton("Eliminar");
 		Eliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				////gerardo
 			}
 		});
 		Eliminar.setBounds(339, 144, 111, 21);
