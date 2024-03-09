@@ -17,7 +17,7 @@ public class Recordatorio {
 	private JTextField Titulo;
 	private JTextField Notas;
 	private Lista Lista = new Lista();
-
+//LopezlaraJose
 	/**
 	 * Launch the application.
 	 */
@@ -113,7 +113,21 @@ public class Recordatorio {
 		frame.getContentPane().add(Nota);
 		
 		JButton Completados = new JButton("Completados");
+		Completados.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Lista.mostrarTodasActividadesCompletadas();
+			}
+		});
 		Completados.setBounds(339, 173, 111, 21);
 		frame.getContentPane().add(Completados);
+		
+		JButton btnCompletar = new JButton("Completar");
+		btnCompletar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Lista.completarSiguienteActividad();
+			}
+		});
+		btnCompletar.setBounds(95, 205, 85, 21);
+		frame.getContentPane().add(btnCompletar);
 	}
 }
