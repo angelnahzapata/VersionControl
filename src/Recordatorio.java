@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.Queue;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -15,6 +16,7 @@ public class Recordatorio {
 	private JFrame frame;
 	private JTextField Titulo;
 	private JTextField Notas;
+	private Lista Lista = new Lista();
 
 	/**
 	 * Launch the application.
@@ -59,6 +61,11 @@ public class Recordatorio {
 		frame.getContentPane().add(Agregar);
 		
 		JButton Todos = new JButton("Todos");
+		Todos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		Todos.setBounds(339, 82, 111, 21);
 		frame.getContentPane().add(Todos);
 		
@@ -74,6 +81,8 @@ public class Recordatorio {
 		JButton Eliminar = new JButton("Eliminar");
 		Eliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Lista.mostrarTodasActividades();
+	
 			}
 		});
 		Eliminar.setBounds(339, 144, 111, 21);
