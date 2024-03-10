@@ -5,13 +5,15 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.SystemColor;
 import javax.swing.JTextField;
 
 public class Recordatorio {
-
+	private Lista Lista = new Lista();
 	private JFrame frame;
 	private JTextField Titulo;
 	private JTextField Notas;
@@ -43,6 +45,7 @@ public class Recordatorio {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(SystemColor.info);
 		frame.getContentPane().setForeground(new Color(0, 128, 192));
@@ -53,6 +56,16 @@ public class Recordatorio {
 		JButton Agregar = new JButton("Agregar");
 		Agregar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				String titulo = Titulo.getText();
+                String nota = Notas.getText();
+                if (!titulo.isEmpty()) {
+                Lista.agregarActividad(new nodo(titulo, nota,false));
+                    JOptionPane.showMessageDialog(null, " Se ha agregado correctamente");
+                } else {
+                    JOptionPane.showMessageDialog(null, "El título no puede estar vacío", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+				
 			}
 		});
 		Agregar.setBounds(95, 144, 85, 21);
