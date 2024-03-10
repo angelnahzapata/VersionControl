@@ -87,7 +87,11 @@ public class Recordatorio {
 		JButton Eliminar = new JButton("Eliminar");
 		Eliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				////gerardo suarez
+				
+				Lista.eliminar();
+				 Titulo.setText("");
+                 Notas.setText("");
+                 JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente");
 			}
 		});
 		Eliminar.setBounds(339, 144, 111, 21);
