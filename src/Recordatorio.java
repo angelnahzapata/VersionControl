@@ -63,7 +63,7 @@ public class Recordatorio {
 		JButton Todos = new JButton("Todos");
 		Todos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				Lista.mostrarTodasActividades();
 			}
 		});
 		Todos.setBounds(339, 82, 111, 21);

@@ -20,10 +20,31 @@ public class Lista {
         JOptionPane.showMessageDialog(null, sb.toString(), "Todas las actividades", JOptionPane.INFORMATION_MESSAGE);
     }
 	public void completarSiguienteActividad() {
-        nodo actividad = colaActividades.poll();
-        actividad.iscompletado();
-        colaActividadesCompletadas.offer(actividad);
-    }
+	    if (!colaActividades.isEmpty()) {
+	        String nombreActividad = JOptionPane.showInputDialog(null, "Ingrese el nombre de la actividad que desea completar:", "Completar actividad", JOptionPane.QUESTION_MESSAGE);
+ 
+	        nodo actividad = buscarActividadPorNombre(nombreActividad);
+	        if (actividad != null) {
+	            actividad.iscompletado();
+	            colaActividades.remove(actividad);
+	            colaActividadesCompletadas.offer(actividad);
+	            JOptionPane.showMessageDialog(null, "La actividad se ha completado exitosamente.", "Actividad completada", JOptionPane.INFORMATION_MESSAGE);
+	        } else {
+	            JOptionPane.showMessageDialog(null, "No se encontró ninguna actividad con ese nombre.", "Error", JOptionPane.ERROR_MESSAGE);
+	        }
+	    } else {
+	        JOptionPane.showMessageDialog(null, "No hay actividades para completar", "Error", JOptionPane.ERROR_MESSAGE);
+	    }
+	}
+
+	public nodo buscarActividadPorNombre(String nombre) {
+	    for (nodo actividad : colaActividades) {
+	        if (actividad.getTitulo().equalsIgnoreCase(nombre)) {
+	            return actividad;
+	        }
+	    }
+	    return null; 
+	}
 	
 	public void mostrarTodasActividadesCompletadas() {
         StringBuilder sb = new StringBuilder();
