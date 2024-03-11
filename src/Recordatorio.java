@@ -1,5 +1,4 @@
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -15,10 +14,8 @@ public class Recordatorio {
 	private JFrame frame;
 	private JTextField Titulo;
 	private JTextField Notas;
-
-	/**
-	 * Launch the application.
-	 */
+	private Lista Lista = new Lista();
+//ANGEL NAH ZAPATA
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -51,10 +48,6 @@ public class Recordatorio {
 		frame.getContentPane().setLayout(null);
 		
 		JButton Agregar = new JButton("Agregar");
-		Agregar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		Agregar.setBounds(95, 144, 85, 21);
 		frame.getContentPane().add(Agregar);
 		
@@ -63,6 +56,11 @@ public class Recordatorio {
 		frame.getContentPane().add(Todos);
 		
 		JButton Importantes = new JButton("Destacados");
+		Importantes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Lista.mostrarDestacados();
+			}
+		});
 		Importantes.setBounds(339, 113, 111, 21);
 		frame.getContentPane().add(Importantes);
 		
@@ -72,14 +70,15 @@ public class Recordatorio {
 		frame.getContentPane().add(Recordatorios);
 		
 		JButton Eliminar = new JButton("Eliminar");
-		Eliminar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		Eliminar.setBounds(339, 144, 111, 21);
 		frame.getContentPane().add(Eliminar);
 		
 		JButton Destacar = new JButton("Destacar");
+		Destacar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Lista.destacar();
+			}
+		});
 		Destacar.setBounds(95, 173, 85, 21);
 		frame.getContentPane().add(Destacar);
 		
@@ -106,5 +105,6 @@ public class Recordatorio {
 		JButton Completados = new JButton("Completados");
 		Completados.setBounds(339, 173, 111, 21);
 		frame.getContentPane().add(Completados);
+		
 	}
 }
