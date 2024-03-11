@@ -91,7 +91,7 @@ public class Recordatorio {
 				Lista.eliminar();
 				 Titulo.setText("");
                  Notas.setText("");
-                 JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente");
+                 
 			}
 		});
 		Eliminar.setBounds(339, 144, 111, 21);
