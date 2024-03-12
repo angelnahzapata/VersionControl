@@ -2,6 +2,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.Queue;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -18,9 +19,17 @@ public class Recordatorio {
 	private JFrame frame;
 	private JTextField Titulo;
 	private JTextField Notas;
+//<<<<<<< HEAD
 	//private Lista Lista = new Lista();
 
 	//Angel Nah Zapata
+//=======
+	//private Lista Lista = new Lista();
+//LopezlaraJose
+	/**
+	 * Launch the application.
+	 */
+//>>>>>>> refs/remotes/origin/RobertoLara
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -76,7 +85,16 @@ public class Recordatorio {
 		frame.getContentPane().add(Agregar);
 		
 		JButton Todos = new JButton("Todos");
+//<<<<<<< HEAD
 		Todos.setBounds(311, 121, 111, 21);
+//=======
+		Todos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Lista.mostrarTodasActividades();
+			}
+		});
+		Todos.setBounds(339, 82, 111, 21);
+//>>>>>>> refs/remotes/origin/RobertoLara
 		frame.getContentPane().add(Todos);
 		
 		JButton Importantes = new JButton("Destacados");
@@ -99,11 +117,16 @@ public class Recordatorio {
 //=======
 		Eliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+//<<<<<<< HEAD
 				
 				Lista.eliminar();
 				 Titulo.setText("");
                  Notas.setText("");
                  
+//=======
+				Lista.mostrarTodasActividades();
+	
+//>>>>>>> refs/remotes/origin/RobertoLara
 			}
 		});
 		Eliminar.setBounds(339, 144, 111, 21);
@@ -140,9 +163,19 @@ public class Recordatorio {
 		frame.getContentPane().add(Comentarios);
 		
 		JButton Completados = new JButton("Completados");
+//<<<<<<< HEAD
 		Completados.setBounds(311, 199, 111, 21);
+//=======
+		Completados.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Lista.mostrarTodasActividadesCompletadas();
+			}
+		});
+		Completados.setBounds(339, 173, 111, 21);
+//>>>>>>> refs/remotes/origin/RobertoLara
 		frame.getContentPane().add(Completados);
 		
+//<<<<<<< HEAD
 		JLabel amarillo = new JLabel("");
 		amarillo.setIcon(new ImageIcon("C:\\Users\\angel\\OneDrive\\Imágenes\\VersionControl\\imagenes\\significado-del-color-amarillo.jpg"));
 		amarillo.setBounds(0, 52, 250, 218);
@@ -158,5 +191,15 @@ public class Recordatorio {
 		purpura.setBounds(249, 52, 235, 248);
 		frame.getContentPane().add(purpura);
 		
+//=======
+		JButton btnCompletar = new JButton("Completar");
+		btnCompletar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Lista.completarSiguienteActividad();
+			}
+		});
+		btnCompletar.setBounds(95, 205, 85, 21);
+		frame.getContentPane().add(btnCompletar);
+//>>>>>>> refs/remotes/origin/RobertoLara
 	}
 }
