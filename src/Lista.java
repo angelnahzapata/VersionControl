@@ -14,7 +14,6 @@ public class Lista {
     public void destacar() {
         if (!colaActividades.isEmpty()) {
             String nombreActividad = JOptionPane.showInputDialog(null, "Ingrese el nombre de la actividad que desea destacar:", "Destacar actividad", JOptionPane.QUESTION_MESSAGE);
-
             nodo actividad = buscarActividadPorNombre(nombreActividad);
 
             if (actividad != null) {

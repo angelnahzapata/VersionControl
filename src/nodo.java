@@ -10,7 +10,6 @@ public nodo(String titulo, String nota) {
 private boolean destacada;
 
 public nodo() {
-   
     destacada = false; 
 }
 
