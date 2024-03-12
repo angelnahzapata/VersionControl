@@ -110,17 +110,17 @@ public class Recordatorio {
 		frame.getContentPane().add(Completados);
 		
 		JLabel amarillo = new JLabel("");
-		amarillo.setIcon(new ImageIcon("C:\\Users\\angel\\OneDrive\\Imágenes\\significado-del-color-amarillo.jpg"));
+		amarillo.setIcon(new ImageIcon("C:\\Users\\angel\\OneDrive\\Imágenes\\VersionControl\\imagenes\\significado-del-color-amarillo.jpg"));
 		amarillo.setBounds(0, 52, 250, 218);
 		frame.getContentPane().add(amarillo);
 		
 		JLabel icon = new JLabel("");
-		icon.setIcon(new ImageIcon("C:\\Users\\angel\\Downloads\\8187144 (1).png"));
+		icon.setIcon(new ImageIcon("C:\\Users\\angel\\OneDrive\\Imágenes\\VersionControl\\imagenes\\icon.png"));
 		icon.setBounds(319, 0, 91, 101);
 		frame.getContentPane().add(icon);
 		
 		JLabel purpura = new JLabel("");
-		purpura.setIcon(new ImageIcon("C:\\Users\\angel\\OneDrive\\Documentos\\7d2181.png"));
+		purpura.setIcon(new ImageIcon("C:\\Users\\angel\\OneDrive\\Imágenes\\VersionControl\\imagenes\\7d2181.png"));
 		purpura.setBounds(249, 52, 235, 248);
 		frame.getContentPane().add(purpura);
 		
