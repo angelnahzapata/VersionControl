@@ -4,6 +4,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.SystemColor;
@@ -12,11 +14,11 @@ import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 
 public class Recordatorio {
-
+	private Lista Lista = new Lista();
 	private JFrame frame;
 	private JTextField Titulo;
 	private JTextField Notas;
-	private Lista Lista = new Lista();
+	//private Lista Lista = new Lista();
 
 	//Angel Nah Zapata
 	public static void main(String[] args) {
@@ -43,6 +45,7 @@ public class Recordatorio {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(SystemColor.info);
 		frame.getContentPane().setForeground(new Color(0, 128, 192));
@@ -51,7 +54,25 @@ public class Recordatorio {
 		frame.getContentPane().setLayout(null);
 		
 		JButton Agregar = new JButton("Agregar");
+//<<<<<<< HEAD
 		Agregar.setBounds(84, 173, 96, 21);
+//=======
+		Agregar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String titulo = Titulo.getText();
+                String nota = Notas.getText();
+                if (!titulo.isEmpty()) {
+                Lista.agregarActividad(new nodo(titulo, nota,false));
+                    JOptionPane.showMessageDialog(null, " Se ha agregado correctamente");
+                } else {
+                    JOptionPane.showMessageDialog(null, "El título no puede estar vacío", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+				
+			}
+		});
+		Agregar.setBounds(95, 144, 85, 21);
+//>>>>>>> refs/remotes/origin/Rama_Gerardo
 		frame.getContentPane().add(Agregar);
 		
 		JButton Todos = new JButton("Todos");
@@ -73,7 +94,20 @@ public class Recordatorio {
 		frame.getContentPane().add(Recordatorios);
 		
 		JButton Eliminar = new JButton("Eliminar");
+//<<<<<<< HEAD
 		Eliminar.setBounds(311, 173, 111, 21);
+//=======
+		Eliminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Lista.eliminar();
+				 Titulo.setText("");
+                 Notas.setText("");
+                 
+			}
+		});
+		Eliminar.setBounds(339, 144, 111, 21);
+//>>>>>>> refs/remotes/origin/Rama_Gerardo
 		frame.getContentPane().add(Eliminar);
 		
 		JButton Destacar = new JButton("Destacar");
