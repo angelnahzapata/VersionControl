@@ -64,7 +64,7 @@ public class Recordatorio {
 		
 		JButton Agregar = new JButton("Agregar");
 //<<<<<<< HEAD
-		Agregar.setBounds(84, 173, 96, 21);
+		//Agregar.setBounds(95, 173, 96, 21);
 //=======
 		Agregar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -80,20 +80,20 @@ public class Recordatorio {
 				
 			}
 		});
-		Agregar.setBounds(95, 144, 85, 21);
+		Agregar.setBounds(86, 168, 94, 21);
 //>>>>>>> refs/remotes/origin/Rama_Gerardo
 		frame.getContentPane().add(Agregar);
 		
 		JButton Todos = new JButton("Todos");
 //<<<<<<< HEAD
-		Todos.setBounds(311, 121, 111, 21);
+	//	Todos.setBounds(329, 91, 111, 21);
 //=======
 		Todos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Lista.mostrarTodasActividades();
 			}
 		});
-		Todos.setBounds(339, 82, 111, 21);
+		Todos.setBounds(317, 137, 111, 21);
 //>>>>>>> refs/remotes/origin/RobertoLara
 		frame.getContentPane().add(Todos);
 		
@@ -103,7 +103,7 @@ public class Recordatorio {
 				Lista.mostrarDestacados();
 			}
 		});
-		Importantes.setBounds(311, 148, 111, 21);
+		Importantes.setBounds(317, 168, 111, 21);
 		frame.getContentPane().add(Importantes);
 		
 		JLabel Recordatorios = new JLabel("To Do List");
@@ -113,7 +113,7 @@ public class Recordatorio {
 		
 		JButton Eliminar = new JButton("Eliminar");
 //<<<<<<< HEAD
-		Eliminar.setBounds(311, 173, 111, 21);
+		//Eliminar.setBounds(317, 199, 111, 21);
 //=======
 		Eliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -129,7 +129,7 @@ public class Recordatorio {
 //>>>>>>> refs/remotes/origin/RobertoLara
 			}
 		});
-		Eliminar.setBounds(339, 144, 111, 21);
+		Eliminar.setBounds(317, 199, 111, 21);
 //>>>>>>> refs/remotes/origin/Rama_Gerardo
 		frame.getContentPane().add(Eliminar);
 		
@@ -159,37 +159,24 @@ public class Recordatorio {
 		
 		JLabel Comentarios = new JLabel("Comentarios");
 		Comentarios.setFont(new Font("Arial", Font.PLAIN, 12));
-		Comentarios.setBounds(90, 121, 81, 13);
+		Comentarios.setBounds(94, 117, 94, 13);
 		frame.getContentPane().add(Comentarios);
 		
 		JButton Completados = new JButton("Completados");
 //<<<<<<< HEAD
-		Completados.setBounds(311, 199, 111, 21);
+		//Completados.setBounds(319, 215, 111, 21);
 //=======
 		Completados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Lista.mostrarTodasActividadesCompletadas();
 			}
 		});
-		Completados.setBounds(339, 173, 111, 21);
+		Completados.setBounds(317, 227, 111, 21);
 //>>>>>>> refs/remotes/origin/RobertoLara
 		frame.getContentPane().add(Completados);
 		
 //<<<<<<< HEAD
-		JLabel amarillo = new JLabel("");
-		amarillo.setIcon(new ImageIcon("C:\\Users\\angel\\OneDrive\\Imágenes\\VersionControl\\imagenes\\significado-del-color-amarillo.jpg"));
-		amarillo.setBounds(0, 52, 250, 218);
-		frame.getContentPane().add(amarillo);
 		
-		JLabel icon = new JLabel("");
-		icon.setIcon(new ImageIcon("C:\\Users\\angel\\OneDrive\\Imágenes\\VersionControl\\imagenes\\icon.png"));
-		icon.setBounds(319, 0, 91, 101);
-		frame.getContentPane().add(icon);
-		
-		JLabel purpura = new JLabel("");
-		purpura.setIcon(new ImageIcon("C:\\Users\\angel\\OneDrive\\Imágenes\\VersionControl\\imagenes\\7d2181.png"));
-		purpura.setBounds(249, 52, 235, 248);
-		frame.getContentPane().add(purpura);
 		
 //=======
 		JButton btnCompletar = new JButton("Completar");
@@ -198,8 +185,23 @@ public class Recordatorio {
 				Lista.completarSiguienteActividad();
 			}
 		});
-		btnCompletar.setBounds(95, 205, 85, 21);
+		btnCompletar.setBounds(86, 227, 94, 21);
 		frame.getContentPane().add(btnCompletar);
+		
+		JLabel amarillo = new JLabel("");
+		amarillo.setIcon(new ImageIcon("C:\\Users\\angel\\OneDrive\\Imágenes\\VersionControl\\imagenes\\significado-del-color-amarillo.jpg"));
+		amarillo.setBounds(0, 52, 250, 218);
+		frame.getContentPane().add(amarillo);
+		
+		JLabel icon = new JLabel("");
+		icon.setIcon(new ImageIcon("C:\\Users\\angel\\OneDrive\\Imágenes\\VersionControl\\imagenes\\icon.png"));
+		icon.setBounds(326, 10, 91, 101);
+		frame.getContentPane().add(icon);
+		
+		JLabel purpura = new JLabel("");
+		purpura.setIcon(new ImageIcon("C:\\Users\\angel\\OneDrive\\Imágenes\\VersionControl\\imagenes\\7d2181.png"));
+		purpura.setBounds(249, 52, 235, 248);
+		frame.getContentPane().add(purpura);
 //>>>>>>> refs/remotes/origin/RobertoLara
 	}
 }
